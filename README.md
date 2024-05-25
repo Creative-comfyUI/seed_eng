@@ -10,7 +10,7 @@ With different Ksamplers we get different result for the same seed as explained 
 This example was done with Euler. lets try with dpmpp_2m 
 ![workflow-4](https://github.com/Creative-comfyUI/seed_eng/assets/166729777/f9405db6-4634-45d4-92d1-6b67835749ea)
 
-This time the 3 images are different for all Ksamplers except Ksampler Variation. Look carefully for Ksampler (inspire) the difference. Pictures 2 and 3 are slightly different, even the landscape in the bottle (the colours). Ksampler variation is the more coherent as it keeps the same variation and blocks the variation provided by the scheduler.  Ksampler inspire doesn't offer this possibility, as you can see the batch seed node is set to variation str inc :0.01, which means that it applies the variation provided by the scheduler. 
+This time the 3 images are different for all Ksamplers except Ksampler Variation. Look carefully for Ksampler (inspire) the difference. Pictures 2 and 3 are slightly different, even the landscape in the bottle (the colours). Ksampler variation is the more coherent as it keeps the same variation and blocks the variation provided by the scheduler.  Ksampler inspire doesn't offer this possibility, as you can see the batch seed node is set to variation str inc :0.01, which means that it applies a slight variation. 
 
 Moreover, the noise in comfyUI is calculated using the CPU, see pytorch reference, but this is not the case in A111 where it is calculated using the GPU. Ksampler offers the possibility to apply in comfyUI the GPU formulation which gives 3 different images for the same seed. The first image is different but the difference between the 3 images is much more important even with the same parameter for the batch seed node. Applying Euler instead of dpmpp gives 3 different image too. That mean the GPU calculation method add X% variation as comfyUI otherwise for Euler we should have the same 3 images. 
 
@@ -29,4 +29,4 @@ From a designer's point of view a batch of 3 images should be slightly different
 
 I am still surprised that no one has yet answered my question as to how this variation is calculated and what the mathematical relationship is between the variation and the seed. Even this is usually calculated, I suppose, taking into account the seed. This means that we can have a seed for image variation 
 
-I invite @cubiq, @ltdrdata and @github.com/comfyanonymous/ComfyUI to comment 
+I invite @cubiq, @ltdrdata and @gcomfyanonymous to comment
