@@ -2,12 +2,12 @@
 
 The Seed of the Ksampler is assigned to all the images generated in a batch size. Repeating the same Seed with the same Ksampler will produce the same 3 images. This reference Seed is the Seed from the first image. The Seed of the following images (2 and 3) is different. The x% variation applied to images 2 and 3 depends on the sampler. Most samplers inject noise for the images that create a variation of the first image. Euler is the exception. Euler gives the same 3 images. However, ComfyUI has added its own x% variation to images 2 and 3, which accentuates the change even more. Using Euler and native Ksampler, instead of having three identical images, we get 3 different images. This is why we can't have the Seed of the images that follow the first, because the sampler variation is random (probably each sampler has a mathematical formulas that determine the injection rate). 
 
-Let see the result with different sampler 
+Let see the result with different sampler using Euler Ksampler
 ![workflow-3](https://github.com/Creative-comfyUI/seed_eng/assets/166729777/ef6da483-226a-451c-b724-bd65aea00ddb)
 
 With different Ksamplers we get different result for the same seed as explained before. Ksampler (inspire) and Ksampler variation... don't apply the ComfyUI variation which explains why we have the same 3 images. Ksampler fooocus apply an X% variation as comfyUI but it is not the same variation as the result is not totally the same.  In all cases except Fooocus we have the same first image. This means that the Fooocus Ksampler didn't use the same seed calculation and explains why image 2 and 3 are different from comfyUI's Ksampler.
 
-This example was done with Euler. lets try with dpmpp_2m 
+Lets try with dpmpp_2m 
 ![workflow-4](https://github.com/Creative-comfyUI/seed_eng/assets/166729777/f9405db6-4634-45d4-92d1-6b67835749ea)
 
 This time the 3 images are different for all Ksamplers except Ksampler Variation. Look carefully for Ksampler (inspire) the difference. Pictures 2 and 3 are slightly different, even the landscape in the bottle (the colours). Ksampler variation is the more coherent as it keeps the same variation and blocks the variation provided by the scheduler.  Ksampler inspire doesn't offer this possibility, as you can see the batch seed node is set to variation str inc :0.01, which means that it applies a slight variation. 
