@@ -15,6 +15,7 @@ This time the 3 images are different for all Ksamplers except Ksampler Variation
 Moreover, the noise in comfyUI is calculated using the CPU, see pytorch reference, but this is not the case in A111 where it is calculated using the GPU. Ksampler (inspire) offers the possibility to apply in comfyUI the GPU formulation which gives 3 different images for the same seed. The first image is different but the difference between the 3 images is much more important even with the same parameter for the same seed node. Applying Euler instead of dpmpp gives 3 different image too. That mean the GPU calculation method add X% variation as comfyUI otherwise for Euler we should have the same 3 images. 
 
 Calculation with GPU A111 type dpmpp Calculation with GPU A111 type Euler 
+
 ![Screenshot 2024-05-24 at 8 12 48 PM](https://github.com/Creative-comfyUI/seed_eng/assets/166729777/c7079006-aebf-4b49-8e57-9b4c40335a5c) ![Screenshot 2024-05-25 at 12 06 40 AM](https://github.com/Creative-comfyUI/seed_eng/assets/166729777/b774c0ad-3091-46fd-931a-92250546b256)
 
 
